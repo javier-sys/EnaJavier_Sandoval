@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Mi Chiquillo Como estas estas el covavi como va? !</h1>
+        <h1>Mi Chiquillo Como estas estas el cocavi como va? !</h1>
     </body>
 </html>
