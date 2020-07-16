@@ -57,8 +57,7 @@ public class ControladorEquipo extends HttpServlet {
                 response.sendRedirect("crudProductos.jsp?msj=valores erroneos");
             }else{
                 EstadioDAO ed = new  EstadioDAO ();
-                Equipo nuevoEquipo = new Equipo (codigo,nombre,descripcion,
-                        cantidad,precio,ed.obtenerEstadio(estadio));
+                Equipo nuevoEquipo = new Equipo (codigo,nombre,descripcion,ed.obtenerEstadio(estadio));
                 EquipoDAO pd = new EquipoDAO();
                 if(pd.obtenerProducto(nuevoProducto.getCodigo())==null){
                     int respuesta = pd.registrar(nuevoProducto);
