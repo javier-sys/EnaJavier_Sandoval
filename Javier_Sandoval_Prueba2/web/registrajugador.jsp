@@ -1,6 +1,6 @@
 <%-- 
     Document   : registrajugador
-    Created on : 16-jul-2020, 2:37:57
+    Created on : 16-jul-2020, 11:37:57
     Author     : javie
 --%>
 
