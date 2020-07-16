@@ -89,7 +89,7 @@ public class ControladorPosicion extends HttpServlet {
             String nombre = request.getParameter("nombre").trim();
         
             if(codigo.equals("")||nombre.isEmpty()){
-                response.sendRedirect("registro.jsp?msj=Campos incompletos");
+                response.sendRedirect("registroposicion.jsp?msj=Campos incompletos");
             }else{
                 Posicion posicionNueva = new Posicion(codigo,nombre);
                 PosicionDAO ud = new PosicionDAO();
@@ -97,20 +97,18 @@ public class ControladorPosicion extends HttpServlet {
                 if(ud.obtenerPocision(posicionNueva.getCodigo())==null){
                     int respuesta = ud.registrarPocision(posicionNueva);
                     if(respuesta==1){
-                    response.sendRedirect((sesion.getAttribute("usuario")!=null)?"intranet.jsp?msj=posicion registrada"
-                            :"index.jsp?msj=Usuario registrado, inicie sesion");
+                     response.sendRedirect("index.jsp?msj=pocision registrada ");
                     }else{
-                    response.sendRedirect((sesion.getAttribute("usuario")!=null)?"intranet.jsp?msj=posicion no se puede registar"
-                            :"index.jsp?msj=Usuario no se puede registrar");
+                    response.sendRedirect("index.jsp.jsp?msj=posicion  no se pudo registrar");
                     }
 
                 }else{
-                    response.sendRedirect((sesion.getAttribute("usuario")!=null)?"intranet.jsp?msj=posicion ya existe":
-                            "registro.jsp?msj=Usuario ya existe");
+                    response.sendRedirect("index.jsp.jsp?msj=pocision ya existe");
                 }
             }
            }catch(Exception e){
-               response.sendRedirect("index.jsp?msj="+e.getMessage());
+               response.sendRedirect("index.jsp.jsp?msj="+e.getMessage());
+           
            }
     
 }

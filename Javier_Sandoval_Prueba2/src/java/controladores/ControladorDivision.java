@@ -52,12 +52,12 @@ public class ControladorDivision extends HttpServlet {
                 if(ed.obtenerDivision(e.getNombre())==null){
                     int respuesta = ed.registrar(e);
                     if(respuesta==1){
-                    response.sendRedirect("index.jsp?msj=Estado registrado");
+                    response.sendRedirect("index.jsp?msj=Division registrada");
                     }else{
-                    response.sendRedirect("index.jsp.jsp?msj=Estado no se pudo registrar");
+                    response.sendRedirect("index.jsp.jsp?msj=Division no se pudo registrar");
                     }
                 }else{
-                    response.sendRedirect("index.jsp.jsp?msj=Estado ya existe");
+                    response.sendRedirect("index.jsp.jsp?msj=Division ya existe");
                 }
             }
            }catch(Exception e){

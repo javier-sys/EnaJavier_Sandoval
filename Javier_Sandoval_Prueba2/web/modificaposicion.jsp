@@ -1,8 +1,4 @@
-<%-- 
-    Document   : modificaposicion
-    Created on : 16-jul-2020, 2:50:30
-    Author     : javie
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

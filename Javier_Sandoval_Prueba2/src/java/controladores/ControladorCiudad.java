@@ -36,7 +36,7 @@ public class ControladorCiudad extends HttpServlet {
             break;
         }
          }else{
-             response.sendRedirect("crudProductos.jsp?msj=No te pases");
+             response.sendRedirect("registraciudad.jsp?msj=No te pases");
          }
     }
 
@@ -53,12 +53,12 @@ public class ControladorCiudad extends HttpServlet {
                 if(ed.obtenerCiudad(e.getNombre())==null){
                     int respuesta = ed.registrar(e);
                     if(respuesta==1){
-                    response.sendRedirect("index.jsp?msj=Estado registrado");
+                    response.sendRedirect("index.jsp?msj=ciudad registrada ");
                     }else{
-                    response.sendRedirect("index.jsp.jsp?msj=Estado no se pudo registrar");
+                    response.sendRedirect("index.jsp.jsp?msj=ciudad  no se pudo registrar");
                     }
                 }else{
-                    response.sendRedirect("index.jsp.jsp?msj=Estado ya existe");
+                    response.sendRedirect("index.jsp.jsp?msj=ciudad ya existe");
                 }
             }
            }catch(Exception e){

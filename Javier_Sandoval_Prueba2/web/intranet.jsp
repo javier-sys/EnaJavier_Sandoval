@@ -29,12 +29,21 @@
             <a href="intranet.jsp">
             <menuitem >Usuarios</menuitem>
             </a> |
-            <a href="registraestadio.jsp">
+            <a href="registroestadio.jsp">
             <menuitem >Estadio</menuitem>
             </a> | 
             <a href="registraciudad.jsp">
-            <menuitem >Ciudades</menuitem>
-            </a>
+                <menuitem >Ciudades</menuitem> </a> |
+            <a href="registraposicion.jsp">
+            <menuitem >Posiciones</menuitem>
+            </a>|
+            <a href="registradivision.jsp">
+            <menuitem >Division</menuitem> </a> |
+              <a href="registraequipo.jsp">
+            <menuitem >Equipo</menuitem> </a> |
+            <a href="registrajugador.jsp">
+            <menuitem >Jugador</menuitem> </a> |
+           
         </menu>
         <h1>Registro de Usuarios</h1>
         <form action="ControladorUsuario" method="post">
