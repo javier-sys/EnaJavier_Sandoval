@@ -8,7 +8,7 @@
     <body>
     <center>
         <h1>Registro de Pocisiones</h1>
-        <form action="ControladorPocision" method="post">
+        <form action="ControladorPosicion" method="post">
             <table>
             <tr>
                <td>ID</td>
