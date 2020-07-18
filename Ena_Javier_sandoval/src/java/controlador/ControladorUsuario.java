@@ -10,5 +10,6 @@ package controlador;
  * @author javie
  */
 public class ControladorUsuario {
+   
     
 }
