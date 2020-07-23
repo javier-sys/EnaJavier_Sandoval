@@ -27,78 +27,29 @@
         <a href="Salir"><input type="button" value="Cerrar Sesion"/></a>
         <menu >
             <a href="intranet.jsp">
-            <menuitem >Usuarios</menuitem>
+            <menuitem>Usuarios</menuitem>
             </a> |
             <a href="crudProductos.jsp">
-            <menuitem >Productos</menuitem>
+            <menuitem>Productos</menuitem>
             </a> | 
             <a href="crudEstados.jsp">
             <menuitem >Estados</menuitem>
             </a>
         </menu>
-        <h1>Registro de Usuarios</h1>
-        <form action="ControladorUsuario" method="post">
-            <table>
-            <tr>
-               <td>ID</td>
-                <td><input type="text" name="id"/></td>
-            </tr>
-            <tr>
-                <td>Nombre</td>
-                <td><input type="text" name="nombre"/></td>
-            </tr>
-            <tr>
-                <td>Apellido</td>
-                <td><input type="text" name="apellido"/></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" name="password"/></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Registrar"/></td>
-                <td><a href="index.jsp">
-                    <input type="button" value="Volver"/>
-                    </a>
-                </td>
-            </tr>
+        
+        
+        <h3>Sistema Floreria</h3>
+        
+           
             
-        </table>
-            <input type="hidden" name="accion" value="2"/>
-        </form>
+       
+           
+        
         <% if(request.getParameter("msj")!= null){%>
         <h3><%= request.getParameter("msj") %></h3>
         <%}%>
-        <h3>Usuarios Registrados</h3>
-        <table border="1" style="border-collapse: collapse;">
-            <tr>
-                <td>ID</td>
-                <td>Nombre</td>
-                <td>Apellido</td>
-                <td>Password</td>
-                <td>Modificar</td>
-                <td>Eliminar</td>
-            </tr>
-            <%  UsuarioDAO ud = new UsuarioDAO();
-                ArrayList<Usuario> usuarios = ud.obtenerUsuarios(); 
-            for(Usuario u:usuarios){
-            %>
-            <tr>
-                <td><%= u.getId() %></td>
-                <td><%= u.getNombre() %></td>
-                <td><%= u.getApellido() %></td>
-                <td><%= UsuarioUtil.createPassword() %></td>
-                <td><a href="modificaUsuario.jsp?id=<%= u.getId() %>">
-                        <input type="button" value="Modificar"/>
-                    </a>
-                </td>
-                <td><a href="eliminarUsuario.jsp?id=<%= u.getId() %>">
-                        <input type="button" value="Eliminar"/>
-                    </a></td>
-            </tr>
-            <% } %>
-        </table>
-        <% if(request.getParameter("msj")!= null){%>
+        
+          <% if(request.getParameter("msj")!= null){%>
         <h4><%= request.getParameter("msj") %></h4>
         <%}%>
       </center>

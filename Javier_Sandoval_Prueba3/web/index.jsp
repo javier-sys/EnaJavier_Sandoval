@@ -53,10 +53,7 @@
             </tr>
             <tr>
                 <td><input type="submit" value="Iniciar Sesion"/></td>
-                <td><a href="registro.jsp">
-                        <input type="button" value="Registrar"/>
-                    </a>
-                </td>
+                
             </tr>
         </table>
             <input type="hidden" name="accion" value="1"/>
