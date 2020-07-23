@@ -10,7 +10,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inicio</title>
+        
+         
+           
+           
+            
+        <title> Inicio</title>
     </head>
     <body>
         <center>
@@ -54,8 +59,20 @@
             <tr>
                 <td><input type="submit" value="Iniciar Sesion"/></td>
                 
+            <br>
+               
+            <menu >
+            <a href="homePedidos.jsp">  </a> 
+            <menuitem> Menu Clientes </menuitem>
+               
+            </br>
+                
             </tr>
-        </table>
+            
+            
+          
+            
+           </table>
             <input type="hidden" name="accion" value="1"/>
         <% if(request.getParameter("msj")!= null){%>
         <h3><%= request.getParameter("msj") %></h3>
