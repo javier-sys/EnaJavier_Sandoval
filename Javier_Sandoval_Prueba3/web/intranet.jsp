@@ -1,8 +1,3 @@
-<%-- 
-    Document   : intranet.jsp
-    Created on : 13-06-2020, 19:30:44
-    Author     : Edgard
---%>
 
 <%@page import="dao.UsuarioDAO"%>
 <%@page import="util.UsuarioUtil"%>

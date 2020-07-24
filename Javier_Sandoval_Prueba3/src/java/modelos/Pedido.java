@@ -1,11 +1,18 @@
 
 package modelos;
 
-/**
- *
- * @author javie
- */
 public class Pedido {
+
+    public Pedido() {
+    }
+
+    public Pedido(int id, Producto producto, int cantidad, String correo, String estado) {
+        this.id = id;
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.correo = correo;
+        this.estado = estado;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -24,14 +31,6 @@ public class Pedido {
     }
 
     public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public Pedido(int id, Producto producto, int cantidad, String correo, String estado) {
-        this.id = id;
-        this.producto = producto;
-        this.cantidad = cantidad;
-        this.correo = correo;
         this.estado = estado;
     }
 
@@ -55,15 +54,20 @@ public class Pedido {
         return estado;
     }
 
+    public Pedido(Producto producto, int cantidad, String correo, String estado) {
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.correo = correo;
+        this.estado = estado;
+    }
+    
     
     private int id;
     private Producto producto;
     private int cantidad;
     private String correo;
     private String estado;
-    
-    public Pedido() {
-    }
+
     
     
     

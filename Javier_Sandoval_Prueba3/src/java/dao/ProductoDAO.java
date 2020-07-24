@@ -69,7 +69,7 @@ public class ProductoDAO extends Conexion {
             desconectar();
         }
     }
-    public Producto obtenerProducto(long codigo) throws SQLException{
+    public Producto obtenerProducto(int codigo) throws SQLException{
         try{
             String sentencia = "select * from v_productos where codigo = ?";
             conectar();
@@ -79,7 +79,7 @@ public class ProductoDAO extends Conexion {
             Producto p = null;
             if(rs.next()){
                 Estado e = new Estado(rs.getInt("id"),rs.getString("e_nombre"));
-                p = new Producto(rs.getLong("codigo"),rs.getString("nombre"),rs.getString("descripcion"),
+                p = new Producto(rs.getInt("codigo"),rs.getString("nombre"),rs.getString("descripcion"),
                 rs.getInt("cantidad"),rs.getInt("precio"),e);
             }
             return p;
@@ -98,7 +98,7 @@ public class ProductoDAO extends Conexion {
             ArrayList<Producto> productos = new ArrayList();
             while(rs.next()){
                 Estado e = new Estado(rs.getInt("id"),rs.getString("e_nombre"));
-                productos.add(new Producto(rs.getLong("codigo"),rs.getString("nombre"),rs.getString("descripcion"),
+                productos.add(new Producto(rs.getInt("codigo"),rs.getString("nombre"),rs.getString("descripcion"),
                 rs.getInt("cantidad"),rs.getInt("precio"),e));
             }
             return productos;

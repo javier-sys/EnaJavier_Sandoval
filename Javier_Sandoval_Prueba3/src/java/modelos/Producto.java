@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package modelos;
 
-/**
- *
- * @author Edgard
- */
+
 public class Producto {
-    private long codigo;
+    private int codigo;
     private String nombre;
     private String descripcion;
     private int cantidad;
@@ -19,8 +12,20 @@ public class Producto {
 
     public Producto() {
     }
+    
+      public Producto(int codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.descripcion= "";
+        this.cantidad=0;
+        Estado es= new Estado(1,"");
+        this.precio=0;
+        this.estado= es ;
+        
+    }
+    
 
-    public Producto(long codigo, String nombre, String descripcion, int cantidad, int precio, Estado estado) {
+    public Producto(int codigo, String nombre, String descripcion, int cantidad, int precio, Estado estado) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -33,7 +38,7 @@ public class Producto {
         return codigo;
     }
 
-    public void setCodigo(long codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -76,6 +81,7 @@ public class Producto {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
+    
     
     
 }

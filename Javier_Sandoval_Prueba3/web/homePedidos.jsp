@@ -1,19 +1,19 @@
-<%--
-<%@page import="dao.CiudadDAO"%>
-<%@page import="modelos.Estadio"%>
-<%@page import="dao.EstadioDAO"%>
-<%@page import="modelos.Ciudad"%>
+
+<%@page import="dao.ProductoDAO"%>
+<%@page import="modelos.Producto"%>
+<%@page import="dao.PedidoDAO"%>
+<%@page import="modelos.Pedido"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <% if (session.getAttribute("usuario") == null) {
         response.sendRedirect("index.jsp?msj=No te pases");
     } else {
-        Estadio a = new Estadio();
+        Pedido a = new Pedido();
         if (request.getParameter("id") != null) {
-            a = new EstadioDAO().obtenerEstadio(Integer.parseInt(request.getParameter("id")));
+            a = new PedidoDAO().obtenerPedido(Integer.parseInt(request.getParameter("id")));
         }
-%>  --%>
+%>  
 <html>
     <head>
 
@@ -26,35 +26,37 @@
         <% if(request.getParameter("msj")!= null){%>
         <h3><%= request.getParameter("msj") %></h3>
         <%}%>
-        <form action="ControladorPedidos" method="post">
+        <form action="ControladorPedido" method="post">
             <input type ="hidden" name="accion" value="1">
             <table>
                 
                 
                 <td>Ingrese Pedidos</td>
                     <td>
-                        <select name="Producto">
-                           <%-- <option value="0">Seleccione</option>
+                        <select name="producto">
+                            <option value="0">Seleccione</option>
                             <% ArrayList<Producto> Productos = new ProductoDAO().obtenerProductos();
-                                for (Producto  : Productos) {%>
-                            <option value="<%= c.getId()%>" >
-                                                      </option>
+                                for (Producto p : Productos) {%>
+                            <option value="<%= p.getCodigo()%>" >
+                                                     
 
-<%= c.getNombre()%>   
+                                   <%= p.getNombre()%>   
+
+                             </option>
 
                             <% } %>
                         </select>
                     </td>
                 </tr>
-                            --%>
+                            
                 
                 <tr>
                     <td>Ingrese Cantidad</td>
-                    <td><input type="number" name="Cantidad"/></td>
+                    <td><input type="number" name="cantidad"/></td>
                 </tr>
                 <tr>
                     <td>Ingrese Correo</td>
-                    <td><input type="text" name="Ingrese Correo"/></td>
+                    <td><input type="text" name="correo"/></td>
                 <tr>
                     
                         

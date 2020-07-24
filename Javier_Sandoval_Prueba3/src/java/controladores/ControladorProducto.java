@@ -48,7 +48,7 @@ public class ControladorProducto extends HttpServlet {
     
     private void modificar(HttpServletRequest request, HttpServletResponse response) throws IOException{
          try{
-            long codigo =Long.parseLong(request.getParameter("codigo").trim());
+            int codigo = Integer.parseInt(request.getParameter("codigo").trim());
             String nombre = request.getParameter("nombre").trim();
             String descripcion = request.getParameter("descripcion").trim();
             int cantidad = Integer.parseInt(request.getParameter("cantidad").trim());
@@ -61,7 +61,7 @@ public class ControladorProducto extends HttpServlet {
                 Producto nuevoProducto = new Producto (codigo,nombre,descripcion,
                         cantidad,precio,ed.obtenerEstado(estado));
                 ProductoDAO pd = new ProductoDAO();
-                if(pd.obtenerProducto(nuevoProducto.getCodigo())==null){
+                if(pd.obtenerProducto((int) nuevoProducto.getCodigo())==null){
                     response.sendRedirect("modProducto.jsp?msj=Codigo de producto inexistente");
                 }else{
                    int respuesta = pd.modificar(nuevoProducto);
@@ -78,7 +78,7 @@ public class ControladorProducto extends HttpServlet {
     }
          private void registrar(HttpServletRequest request, HttpServletResponse response) throws IOException{
            try{
-            long codigo =Long.parseLong(request.getParameter("codigo").trim());
+               int codigo= Integer.parseInt(request.getParameter("codigo").trim());
             String nombre = request.getParameter("nombre").trim();
             String descripcion = request.getParameter("descripcion").trim();
             int cantidad = Integer.parseInt(request.getParameter("cantidad").trim());
@@ -91,7 +91,7 @@ public class ControladorProducto extends HttpServlet {
                 Producto nuevoProducto = new Producto (codigo,nombre,descripcion,
                         cantidad,precio,ed.obtenerEstado(estado));
                 ProductoDAO pd = new ProductoDAO();
-                if(pd.obtenerProducto(nuevoProducto.getCodigo())==null){
+                if(pd.obtenerProducto((int) nuevoProducto.getCodigo())==null){
                     int respuesta = pd.registrar(nuevoProducto);
                     if(respuesta==1){
                     response.sendRedirect("crudProductos.jsp?msj=Producto registrado");

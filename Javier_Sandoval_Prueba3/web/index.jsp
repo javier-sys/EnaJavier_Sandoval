@@ -61,9 +61,12 @@
                 
             <br>
                
-            <menu >
-            <a href="homePedidos.jsp">  </a> 
-            <menuitem> Menu Clientes </menuitem>
+          
+            
+           
+            
+            
+        </menu>
                
             </br>
                 
@@ -79,5 +82,9 @@
         <%}%>
         </form>
         </center>
+         <menu >
+            <a href="homePedidos.jsp">
+            <menuitem>Pedidos</menuitem>
+            </a> 
     </body>
 </html>
