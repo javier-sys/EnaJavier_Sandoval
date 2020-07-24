@@ -63,16 +63,16 @@ public class PedidoDAO extends Conexion {
     public Pedido obtenerPedido(int id) throws SQLException{
         
         try{
-            String sentencia = "SELECT * FROM `vista_estadio` WHERE idestadio=?";
+            String sentencia = "SELECT * FROM `vista_pedido` WHERE identidad=?";
             conectar();
             PreparedStatement ps = obtenerPS(sentencia);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             Pedido p = null;
             if(rs.next()){
-                  
-                //Producto pro = new Producto(rs.getInt("identidad"),rs.getString("nombre_ciudad"),rs.getString("descr);
-              //  p = new Pedido(rs.getInt("idestadio"),rs.getString("nombre_estadio"),rs.getInt("capacidad"),rs.getInt());
+                
+                Producto pro = new Producto(rs.getInt("id_producto"),rs.getString("nombrepro"));
+                p = new Pedido(rs.getInt("identidad"),pro,rs.getInt("cantidad"),rs.getString("correo"),rs.getString("estado"));
                 
             }
             return p;
