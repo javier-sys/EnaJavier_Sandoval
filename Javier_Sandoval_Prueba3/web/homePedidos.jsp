@@ -9,6 +9,15 @@
  
 <html>
     <head>
+        <% if (session.getAttribute("usuario") == null) {
+        response.sendRedirect("index.jsp?msj=No te pases");
+    } else {
+        Pedido a = new Pedido();
+        if (request.getParameter("id") != null) {
+            a = new PedidoDAO().obtenerPedido(Integer.parseInt(request.getParameter("id")));
+        }
+%>
+        
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Mis Pedidos</title>
