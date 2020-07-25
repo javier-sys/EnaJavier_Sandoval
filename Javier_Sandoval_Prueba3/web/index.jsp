@@ -86,5 +86,6 @@
             <a href="homePedidos.jsp">
             <menuitem>Pedidos</menuitem>
             </a> 
+         </menu>
     </body>
 </html>

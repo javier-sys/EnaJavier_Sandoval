@@ -18,10 +18,12 @@ public class PedidoDAO extends Conexion {
         try{
             conectar();
             PreparedStatement ps = obtenerPS(sentencia);
-            ps.setInt(1,(int)ped.getProducto().getCodigo());
+            ps.setInt(1,ped.getProducto().getCodigo());
             ps.setInt(2, ped.getCantidad());
             ps.setString(3, ped.getCorreo());
             ps.setString(4, ped.getEstado());
+            
+            
             
             return ps.executeUpdate();
         }catch(Exception e){
@@ -59,14 +61,14 @@ public class PedidoDAO extends Conexion {
         }
     } */
    
-    
+                                     
     public Pedido obtenerPedido(int id) throws SQLException{
         
         try{
-            String sentencia = "SELECT * FROM `vista_pedido` WHERE identidad=?";
+            String sentencia = "SELECT * FROM vista_pedido WHERE identidad=?";
             conectar();
             PreparedStatement ps = obtenerPS(sentencia);
-            ps.setInt(1, id);
+            ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();
             Pedido p = null;
             if(rs.next()){
@@ -100,6 +102,28 @@ public class PedidoDAO extends Conexion {
             desconectar();
         }
     }
+    
+    
+    public ArrayList<Pedido> obtenerPedidos() throws SQLException{
+        try{
+            String sentencia = "select * from v_pedido";
+            conectar();
+            PreparedStatement ps = obtenerPS(sentencia);
+            ResultSet rs = ps.executeQuery();
+            Pedido p ;
+            ArrayList<Pedido> pedidos = new ArrayList();
+            while(rs.next()){
+                 Producto pro = new Producto(rs.getInt("id_producto"),rs.getString("nombrepro"));
+                p = new Pedido(rs.getInt("identidad"),pro,rs.getInt("cantidad"),rs.getString("correo"),rs.getString("estado"));
+                pedidos.add(p);
+            }
+            return pedidos;
+        }catch(Exception e){
+            return new ArrayList();
+        }finally{
+            desconectar();
+        }
+    }
     public ArrayList<Producto> obtenerProductos() throws SQLException{
         String sentencia = "select * from producto";
         try{
@@ -117,5 +141,7 @@ public class PedidoDAO extends Conexion {
             desconectar();
         }
     }
+    
+    
     
 }

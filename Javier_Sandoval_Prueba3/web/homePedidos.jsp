@@ -6,14 +6,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<% if (session.getAttribute("usuario") == null) {
-        response.sendRedirect("index.jsp?msj=No te pases");
-    } else {
-        Pedido a = new Pedido();
-        if (request.getParameter("id") != null) {
-            a = new PedidoDAO().obtenerPedido(Integer.parseInt(request.getParameter("id")));
-        }
-%>  
+ 
 <html>
     <head>
 
@@ -72,6 +65,11 @@
           <%}%>
 
     </center>
+             <menu>
+            <a href="homePedidos.jsp">
+            <menuitem>Pedidos</menuitem>
+            </a> 
+         </menu>
 </body>
 </html>
 <% }%>
