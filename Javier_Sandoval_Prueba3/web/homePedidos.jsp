@@ -9,7 +9,7 @@
  
 <html>
     <head>
-        <% if (session.getAttribute("usuario") == null) {
+        <% if (session.getAttribute("Pedido") == null) {
         response.sendRedirect("index.jsp?msj=No te pases");
     } else {
         Pedido a = new Pedido();
